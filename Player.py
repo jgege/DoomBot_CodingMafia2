@@ -20,29 +20,29 @@ class Player(object):
         absDistance = self.calcAbsDistance(startInfo['position']['x'], startInfo['position']['y'], endInfo['position']['x'], endInfo['position']['y'])
         
         self.mvToCoordRatio = 2 / float(absDistance)
-        print "MTCR: " + str(self.mvToCoordRatio)
+        print "MoveRatio: " + str(self.mvToCoordRatio)
         return self.mvToCoordRatio
     
     def calibrateTurning(self):
         """
-        degree = 45
+        degree = 90
         startInfo = self.api.player.getInfo()
         self.api.player.turnLeft(degree)
-        time.sleep(2)
+        time.sleep(4)
         self.refreshSelfInfo()
         endInfo = self.info
-        angleDiff = abs(startInfo['angle'] - endInfo['angle'])
+        angleDiff = endInfo['angle'] - startInfo['angle']
         
-        self.rotateRatio = float(angleDiff) / float(degree)
-        
-        print "RR: " + str(self.rotateRatio)
+        self.rotateRatio = float(angleDiff) / float(degree)        
+        print "TurnRatio: " + str(self.rotateRatio)
 """
-        self.rotateRatio = math.pi
+        self.rotateRatio = 3.00789474
         return self.rotateRatio
     
     def turnLeft(self, degree):
         if (self.rotateRatio > 0):
             degree /= self.rotateRatio
+        
         self.api.player.turnLeft(degree)
 
     def turnRight(self, degree):
@@ -64,42 +64,74 @@ class Player(object):
         self.refreshSelfInfo()
         time.sleep(1)
         
+        playerAngle = self.info['angle']%360
+        print "PA: " + str(playerAngle) + " oPA: " + str(self.info['angle'])
+        print "A: " + str(angle%360) + " oPA: " + str(angle)
+        angle %= 360
+        
+        if ((playerAngle+180) < angle or playerAngle > angle):
+            print "Turn right..."
+            self.turnRight(abs(angle-360-playerAngle)%360)
+        else:
+            print "Turn left..."
+            self.turnLeft((360-playerAngle+angle)%360)
+        
+        return
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        print "setAngle: " + str(angle)
+        
         if (angle == 0):
             self.setAngleToZero()
             return;
         
-        playerAngle = self.info['angle']
+        #print "PA: " + str(self.info['angle'])
+        playerAngle = self.info['angle'] - 180 # -180;180
+        #print "PA-180: " + str(playerAngle)
+        #print "angle " + str(angle)
+        angle -= 180 # -180;180
+        #print "angle-180 " + str(angle)
+        angleDistance = (playerAngle) - (angle)
+        print "AD: " + str(angleDistance+180)
+        print "PA: " + str(playerAngle+180)
+        #print "AD: " + str(angleDistance)
+        # 50 - 10
+        # 10 - 50
         
-        if ((playerAngle + 180) > angle):
-            self.turnLeft((playerAngle+360-angle)%360)
+        if (angleDistance > 0):
+            self.turnLeft(angleDistance+180)
         else:
-            self.turnRight(angle-playerAngle)
-        
-        """
-        print "Angle: " + str(angle)
-        provisional = angle - self.info['angle']
-        print "selfAngle: " + str(self.info['angle'])
-        print "Provisional: " + str(provisional)
-        
-        if (self.info['angle'] < 180 and self.info['angle'] > angle):
-            print "Turn to left (#1) " + (str(self.info['angle']-angle))
-            self.turnLeft(self.info['angle']-angle)
-            return
-        
-        if (provisional < 0):
-            provisional += 360
-            
-            print "Corrected provisonal: " + str(provisional)
-            
-        if (provisional > 180):
-            print "Turn right by " + str(provisional)
-            self.turnRight(provisional)
-            return
-        
-        print "Turn left by " + str(provisional)
-        self.turnLeft(provisional)
-        self.refreshSelfInfo()
-"""
+            self.turnRight(angleDistance+180)
+
     def calcAbsDistance(self, x1, y1, x2, y2):
         return math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
     
@@ -107,8 +139,11 @@ class Player(object):
         self.refreshSelfInfo()
         return self.calcAbsDistance(self.info['position']['x'], self.info['position']['y'], objX, objY)
     
-    def moveForwardByCoords(self, coords):
+    def moveForward(self, coords):
         self.api.player.moveForward(self.mvToCoordRatio*coords/2)
+    
+    def moveBackward(self, coords):
+        self.api.player.moveBackward(self.mvToCoordRatio*coords/2)
         
     def findTheClosestDoor(self):
         doorList = self.api.world.getDoors()
@@ -144,7 +179,7 @@ class Player(object):
         # calculates the degree between two points (it doesn't care about what is their current rotation)
         angle = math.degrees(math.atan2(y - self.info['position']['y'], x - self.info['position']['x']))
         print "turnTowards angle: " + str(angle)
-        self.setAngle(abs(angle))
+        self.setAngle(angle)
 
     def turnToAbsAngleFast(self, angle):
         if ((self.info['angle'] + 180) % 360 > angle):

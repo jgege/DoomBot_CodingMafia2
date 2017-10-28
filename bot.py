@@ -6,22 +6,46 @@ import math
 api = ApiWrapper("http://localhost:6001")
 bot = Player(api)
 #bot.doRotateRationTest()
-bot.turnLeft(90)
-time.sleep(2)
-bot.turnRight(180)
-time.sleep(3)
-bot.setAngle(270)
-time.sleep(3)
+
+#bot.setAngle(70)
+
+"""
 bot.refreshSelfInfo()
 print bot.info['angle']
+
+for i in range(0, 360, 45):
+    print "setAngle: " + str(i)
+    bot.setAngle(i)
+    time.sleep(4)
+    bot.refreshSelfInfo()
+    print bot.info['angle']
+   """ 
+"""    
+while True:
+    bot.setAngle()
+    #bot.setAngleToZero()
+    time.sleep(10)
+    bot.refreshSelfInfo()
+    print bot.info['angle']
 """
+
 bot.refreshSelfInfo()
 print bot.info
 barrel = bot.findTheClosestBarrel()
 print barrel
 print bot.calcDistanceFromObject(barrel['position']['x'], barrel['position']['y'])
 bot.turnTowards(barrel['position']['x'], barrel['position']['y'])
-"""
+time.sleep(2)
+bot.refreshSelfInfo()
+bot.info['angle']
+bot.moveForward(barrel['distance'])
+time.sleep(2)
+bot.refreshSelfInfo()
+bot.turnTowards(barrel['position']['x'], barrel['position']['y'])
+time.sleep(1)
+bot.moveBackward(50)
+time.sleep(1)
+bot.burstFire(3)
 """
 bot.refreshSelfInfo()
 print "botpy CA:" + str(bot.info['angle'])
