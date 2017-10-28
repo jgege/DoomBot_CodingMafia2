@@ -2,7 +2,7 @@ from ApiWrapper import ApiWrapper
 
 api = ApiWrapper("http://localhost:6001")
 print "Player: "
-print api.player.getInfo()
+#print api.player.getInfo()
 print api.player.walkForward(25)
 #print "PlayerS: "
 #print api.players.getInfo()

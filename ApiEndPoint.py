@@ -13,4 +13,4 @@ class ApiEndPoint(object):
 	        'content-type': "application/json",
 	        'cache-control': "no-cache"
 	    }
-		return requests.request("POST", self.host + uri, data=payload, headers=headers).text
+		return requests.post(self.host + uri, data=payload, headers=headers).text

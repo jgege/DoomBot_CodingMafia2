@@ -1,4 +1,3 @@
-import requests
 from ApiEndPoint import ApiEndPoint
 
 class ApiPlayer(ApiEndPoint):
@@ -10,4 +9,4 @@ class ApiPlayer(ApiEndPoint):
 
 	def walkForward(self, steps):
 		data = {"type" : "forward", "amount" : steps}
-		return super(ApiPlayer, self).post("/api/player", data)
+		return super(ApiPlayer, self).post("/api/player/actions", data)
