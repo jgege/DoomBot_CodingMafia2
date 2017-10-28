@@ -8,7 +8,7 @@ class ApiEndPoint(object):
 		if (len(data) > 0):
 			payload = json.dumps(data)
 			return requests.get(self.host + uri, data=payload).content
-		return requests.get(self.host + uri).content
+		return json.loads(requests.get(self.host + uri).content)
 
 	def post(self, uri, data):
 		payload = json.dumps(data)
@@ -16,4 +16,4 @@ class ApiEndPoint(object):
 	        'content-type': "application/json",
 	        'cache-control': "no-cache"
 	    }
-		return requests.post(self.host + uri, data=payload, headers=headers).content
+		return json.loads(requests.post(self.host + uri, data=payload, headers=headers).content)
