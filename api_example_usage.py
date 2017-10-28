@@ -1,6 +1,6 @@
 from ApiWrapper import ApiWrapper
 
-api = ApiWrapper("localhost:6001")
+api = ApiWrapper("http://localhost:6001")
 print "Player: "
 print api.player.getInfo()
 print "PlayerS: "

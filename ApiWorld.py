@@ -1,8 +1,8 @@
-from ApiEndPoint import ApiEndPoint
+import requests
 
-class ApiWorld(ApiEndPoint):
-    def __init__(self, connection):
-        super(ApiWorld, self).__init__(connection)
+class ApiWorld(object):
+    def __init__(self, host):
+        self.host = host
         
     def getInfo(self):
-        return super(ApiWorld, self).sendRequest("GET","/api/world")
+        return requests.get(self.host+"/api/world").content

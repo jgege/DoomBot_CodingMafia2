@@ -1,8 +1,8 @@
-from ApiEndPoint import ApiEndPoint
+import requests
 
-class ApiPlayers(ApiEndPoint):
-    def __init__(self, connection):
-        super(ApiPlayers, self).__init__(connection)
+class ApiPlayers(object):
+    def __init__(self, host):
+        self.host = host
         
     def getInfo(self):
-        return super(ApiPlayers, self).sendRequest("GET","/api/players")
+        return requests.get(self.host+"/api/players").content
