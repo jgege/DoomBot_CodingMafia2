@@ -1,0 +1,1577 @@
+[
+    {
+        "id": 72,
+        "position": {
+            "x": 1504,
+            "y": -2496,
+            "z": 0
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 15,
+        "type": "Dead player",
+        "flags": {},
+        "distance": 45.855056762695312
+    },
+    {
+        "id": 0,
+        "position": {
+            "x": 1547.237548828125,
+            "y": -2501.23486328125,
+            "z": 0
+        },
+        "angle": 359,
+        "height": 56,
+        "health": 100,
+        "typeId": -1,
+        "type": "Player",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_DROPOFF": true,
+            "MF_PICKUP": true,
+            "MF_NOTDMATCH": true
+        },
+        "distance": 0
+    },
+    {
+        "id": 57,
+        "position": {
+            "x": 2100.83984375,
+            "y": -2506.98193359375,
+            "z": 0
+        },
+        "angle": 180,
+        "height": 14,
+        "health": -10,
+        "typeId": 3004,
+        "type": "FORMER HUMAN",
+        "attacking": 0,
+        "flags": {
+            "MF_JUSTHIT": true,
+            "MF_DROPOFF": true,
+            "MF_CORPSE": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 556.4757080078125
+    },
+    {
+        "id": 110,
+        "position": {
+            "x": 2079.70556640625,
+            "y": -2506.761474609375,
+            "z": 0
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2007,
+        "type": "Ammo clip",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_DROPPED": true
+        },
+        "distance": 535.23138427734375
+    },
+    {
+        "id": 76,
+        "position": {
+            "x": 2368,
+            "y": -2336,
+            "z": 0
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 903.3798828125
+    },
+    {
+        "id": 75,
+        "position": {
+            "x": 1792,
+            "y": -2144,
+            "z": 0
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 479.61614990234375
+    },
+    {
+        "id": 74,
+        "position": {
+            "x": 2112,
+            "y": -2688,
+            "z": 0
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 658.14495849609375
+    },
+    {
+        "id": 64,
+        "position": {
+            "x": 2240,
+            "y": -2256,
+            "z": 0
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 815.3798828125
+    },
+    {
+        "id": 63,
+        "position": {
+            "x": 1712,
+            "y": -2144,
+            "z": 0
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 439.61614990234375
+    },
+    {
+        "id": 105,
+        "position": {
+            "x": 2174.38916015625,
+            "y": -2465.18505859375,
+            "z": 8
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2007,
+        "type": "Ammo clip",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_DROPPED": true
+        },
+        "distance": 645.176513671875
+    },
+    {
+        "id": 8,
+        "position": {
+            "x": 1824,
+            "y": -3280,
+            "z": -80
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2019,
+        "type": "Blue armor 200%",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 917.14630126953125
+    },
+    {
+        "id": 54,
+        "position": {
+            "x": 2176,
+            "y": -4000,
+            "z": -136
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2049,
+        "type": "Box of Shells",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 1813.146240234375
+    },
+    {
+        "id": 70,
+        "position": {
+            "x": 448,
+            "y": -3328,
+            "z": -8
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 1512.6201171875
+    },
+    {
+        "id": 18,
+        "position": {
+            "x": 432,
+            "y": -3424,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1576.6201171875
+    },
+    {
+        "id": 17,
+        "position": {
+            "x": 432,
+            "y": -3040,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1384.6201171875
+    },
+    {
+        "id": 16,
+        "position": {
+            "x": 96,
+            "y": -3072,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1736.6201171875
+    },
+    {
+        "id": 15,
+        "position": {
+            "x": 96,
+            "y": -3392,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1896.6201171875
+    },
+    {
+        "id": 14,
+        "position": {
+            "x": 144,
+            "y": -3328,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1816.6201171875
+    },
+    {
+        "id": 13,
+        "position": {
+            "x": 144,
+            "y": -3136,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1720.6201171875
+    },
+    {
+        "id": 71,
+        "position": {
+            "x": -96,
+            "y": -3296,
+            "z": 104
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 10,
+        "type": "Bloody mess",
+        "flags": {},
+        "distance": 2040.6201171875
+    },
+    {
+        "id": 69,
+        "position": {
+            "x": 1088,
+            "y": -2944,
+            "z": 0
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 15,
+        "type": "Dead player",
+        "flags": {},
+        "distance": 680.6201171875
+    },
+    {
+        "id": 27,
+        "position": {
+            "x": 864,
+            "y": -3328,
+            "z": 0
+        },
+        "angle": 90,
+        "height": 42,
+        "health": 20,
+        "typeId": 2035,
+        "type": "Barrel",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_NOBLOOD": true
+        },
+        "distance": 1168.3839111328125
+    },
+    {
+        "id": 24,
+        "position": {
+            "x": 976,
+            "y": -2912,
+            "z": 0
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 776.6201171875
+    },
+    {
+        "id": 23,
+        "position": {
+            "x": 736,
+            "y": -2976,
+            "z": 0
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1048.6201171875
+    },
+    {
+        "id": 22,
+        "position": {
+            "x": 736,
+            "y": -3520,
+            "z": 0
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1424.3839111328125
+    },
+    {
+        "id": 21,
+        "position": {
+            "x": 1312,
+            "y": -3520,
+            "z": 0
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1136.3839111328125
+    },
+    {
+        "id": 68,
+        "position": {
+            "x": 1024,
+            "y": -3264,
+            "z": -16
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 10,
+        "type": "Bloody mess",
+        "flags": {},
+        "distance": 1024.3839111328125
+    },
+    {
+        "id": 4,
+        "position": {
+            "x": 528,
+            "y": -3152,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1344.6201171875
+    },
+    {
+        "id": 3,
+        "position": {
+            "x": 528,
+            "y": -3312,
+            "z": -8
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1424.6201171875
+    },
+    {
+        "id": 2,
+        "position": {
+            "x": 288,
+            "y": -3360,
+            "z": 40
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 48,
+        "type": "Tall, techno pillar",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1688.6201171875
+    },
+    {
+        "id": 1,
+        "position": {
+            "x": 288,
+            "y": -3104,
+            "z": 40
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 48,
+        "type": "Tall, techno pillar",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1560.6201171875
+    },
+    {
+        "id": 55,
+        "position": {
+            "x": 2432,
+            "y": -4000,
+            "z": -136
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2048,
+        "type": "Box of Ammo",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 1941.146240234375
+    },
+    {
+        "id": 58,
+        "position": {
+            "x": 2184.108154296875,
+            "y": -2464.528564453125,
+            "z": 16
+        },
+        "angle": 225,
+        "height": 14,
+        "health": 0,
+        "typeId": 3004,
+        "type": "FORMER HUMAN",
+        "attacking": 0,
+        "flags": {
+            "MF_AMBUSH": true,
+            "MF_JUSTHIT": true,
+            "MF_DROPOFF": true,
+            "MF_CORPSE": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 655.2237548828125
+    },
+    {
+        "id": 73,
+        "position": {
+            "x": 2240,
+            "y": -2480,
+            "z": 24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 15,
+        "type": "Dead player",
+        "flags": {},
+        "distance": 703.3798828125
+    },
+    {
+        "id": 62,
+        "position": {
+            "x": 2288,
+            "y": -2320,
+            "z": 24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 831.3798828125
+    },
+    {
+        "id": 61,
+        "position": {
+            "x": 2288,
+            "y": -2544,
+            "z": 24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 762.14495849609375
+    },
+    {
+        "id": 60,
+        "position": {
+            "x": 2224,
+            "y": -2544,
+            "z": 24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 698.14495849609375
+    },
+    {
+        "id": 59,
+        "position": {
+            "x": 2224,
+            "y": -2320,
+            "z": 24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 767.3798828125
+    },
+    {
+        "id": 29,
+        "position": {
+            "x": 2752,
+            "y": -2640,
+            "z": -16
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1274.1448974609375
+    },
+    {
+        "id": 28,
+        "position": {
+            "x": 2672,
+            "y": -2752,
+            "z": -16
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 1250.1448974609375
+    },
+    {
+        "id": 80,
+        "position": {
+            "x": 2976,
+            "y": -3840,
+            "z": -24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 2098.14501953125
+    },
+    {
+        "id": 33,
+        "position": {
+            "x": 3008,
+            "y": -3968,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2008,
+        "type": "Shotgun shells",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 2197.146240234375
+    },
+    {
+        "id": 32,
+        "position": {
+            "x": 2848,
+            "y": -3584,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2008,
+        "type": "Shotgun shells",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 1842.1448974609375
+    },
+    {
+        "id": 5,
+        "position": {
+            "x": 3440,
+            "y": -3472,
+            "z": 96
+        },
+        "angle": 135,
+        "height": 56,
+        "health": 60,
+        "typeId": 3001,
+        "type": "IMP",
+        "attacking": 0,
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 2378.14501953125
+    },
+    {
+        "id": 78,
+        "position": {
+            "x": 3072,
+            "y": -3488,
+            "z": -24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 12,
+        "type": "Bloody mess",
+        "flags": {},
+        "distance": 2018.1448974609375
+    },
+    {
+        "id": 31,
+        "position": {
+            "x": 2800,
+            "y": -3040,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1522.1448974609375
+    },
+    {
+        "id": 30,
+        "position": {
+            "x": 3232,
+            "y": -3040,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 1954.1448974609375
+    },
+    {
+        "id": 7,
+        "position": {
+            "x": 3056,
+            "y": -3584,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 56,
+        "health": 20,
+        "typeId": 3004,
+        "type": "FORMER HUMAN",
+        "attacking": 0,
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 2050.14501953125
+    },
+    {
+        "id": 91,
+        "position": {
+            "x": 3648,
+            "y": -3840,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2770.14501953125
+    },
+    {
+        "id": 90,
+        "position": {
+            "x": 3664,
+            "y": -3168,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2450.14501953125
+    },
+    {
+        "id": 89,
+        "position": {
+            "x": 3616,
+            "y": -3088,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2362.14501953125
+    },
+    {
+        "id": 88,
+        "position": {
+            "x": 3568,
+            "y": -2992,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2266.14501953125
+    },
+    {
+        "id": 87,
+        "position": {
+            "x": 3376,
+            "y": -3024,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2090.14501953125
+    },
+    {
+        "id": 86,
+        "position": {
+            "x": 3472,
+            "y": -2960,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2154.14501953125
+    },
+    {
+        "id": 85,
+        "position": {
+            "x": 3712,
+            "y": -3264,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2546.14501953125
+    },
+    {
+        "id": 84,
+        "position": {
+            "x": 3616,
+            "y": -3392,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2514.14501953125
+    },
+    {
+        "id": 83,
+        "position": {
+            "x": 3648,
+            "y": -3648,
+            "z": 104
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2049,
+        "type": "Box of Shells",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 2674.14501953125
+    },
+    {
+        "id": 67,
+        "position": {
+            "x": 3232,
+            "y": -3808,
+            "z": -48
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2012,
+        "type": "Medikit",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 2338.14501953125
+    },
+    {
+        "id": 66,
+        "position": {
+            "x": 3264,
+            "y": -3936,
+            "z": -48
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2001,
+        "type": "Shotgun",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 2434.14501953125
+    },
+    {
+        "id": 65,
+        "position": {
+            "x": 3264,
+            "y": -3856,
+            "z": -48
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2049,
+        "type": "Box of Shells",
+        "flags": {
+            "MF_SPECIAL": true
+        },
+        "distance": 2394.14501953125
+    },
+    {
+        "id": 77,
+        "position": {
+            "x": 2800,
+            "y": -2992,
+            "z": -24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 15,
+        "type": "Dead player",
+        "flags": {},
+        "distance": 1498.1448974609375
+    },
+    {
+        "id": 6,
+        "position": {
+            "x": 2912,
+            "y": -2816,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 56,
+        "health": 20,
+        "typeId": 3004,
+        "type": "FORMER HUMAN",
+        "attacking": 0,
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 1522.1448974609375
+    },
+    {
+        "id": 79,
+        "position": {
+            "x": 2944,
+            "y": -4256,
+            "z": -24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 12,
+        "type": "Bloody mess",
+        "flags": {},
+        "distance": 2453.146240234375
+    },
+    {
+        "id": 38,
+        "position": {
+            "x": 2944,
+            "y": -4320,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 42,
+        "health": 20,
+        "typeId": 2035,
+        "type": "Barrel",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_NOBLOOD": true
+        },
+        "distance": 2517.146240234375
+    },
+    {
+        "id": 35,
+        "position": {
+            "x": 3104,
+            "y": -4176,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2453.146240234375
+    },
+    {
+        "id": 34,
+        "position": {
+            "x": 2912,
+            "y": -4176,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2357.146240234375
+    },
+    {
+        "id": 81,
+        "position": {
+            "x": 3264,
+            "y": -4512,
+            "z": -24
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 2869.146240234375
+    },
+    {
+        "id": 51,
+        "position": {
+            "x": 2928,
+            "y": -4528,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 35,
+        "type": "Candelabra",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 2717.146240234375
+    },
+    {
+        "id": 50,
+        "position": {
+            "x": 3088,
+            "y": -4528,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 35,
+        "type": "Candelabra",
+        "flags": {
+            "MF_SOLID": true
+        },
+        "distance": 2797.146240234375
+    },
+    {
+        "id": 45,
+        "position": {
+            "x": 2736,
+            "y": -4448,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2541.146240234375
+    },
+    {
+        "id": 44,
+        "position": {
+            "x": 3280,
+            "y": -4448,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2813.146240234375
+    },
+    {
+        "id": 43,
+        "position": {
+            "x": 2736,
+            "y": -4192,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2285.146240234375
+    },
+    {
+        "id": 42,
+        "position": {
+            "x": 2832,
+            "y": -4176,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2317.146240234375
+    },
+    {
+        "id": 41,
+        "position": {
+            "x": 3184,
+            "y": -4176,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2014,
+        "type": "Health Potion +1% health",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2493.146240234375
+    },
+    {
+        "id": 40,
+        "position": {
+            "x": 2832,
+            "y": -4240,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 42,
+        "health": 20,
+        "typeId": 2035,
+        "type": "Barrel",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_NOBLOOD": true
+        },
+        "distance": 2381.146240234375
+    },
+    {
+        "id": 39,
+        "position": {
+            "x": 3184,
+            "y": -4224,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 42,
+        "health": 20,
+        "typeId": 2035,
+        "type": "Barrel",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_NOBLOOD": true
+        },
+        "distance": 2541.146240234375
+    },
+    {
+        "id": 37,
+        "position": {
+            "x": 3296,
+            "y": -4352,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2725.146240234375
+    },
+    {
+        "id": 36,
+        "position": {
+            "x": 2720,
+            "y": -4352,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2028,
+        "type": "Floor lamp",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2437.146240234375
+    },
+    {
+        "id": 12,
+        "position": {
+            "x": 3280,
+            "y": -4160,
+            "z": -24
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2007,
+        "type": "Ammo clip",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2562.14501953125
+    },
+    {
+        "id": 11,
+        "position": {
+            "x": 2736,
+            "y": -4160,
+            "z": -24
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2007,
+        "type": "Ammo clip",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2253.146240234375
+    },
+    {
+        "id": 10,
+        "position": {
+            "x": 2880,
+            "y": -4416,
+            "z": -24
+        },
+        "angle": 0,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2012,
+        "type": "Medikit",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 2581.146240234375
+    },
+    {
+        "id": 9,
+        "position": {
+            "x": 3008,
+            "y": -4416,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 56,
+        "health": 60,
+        "typeId": 3001,
+        "type": "IMP",
+        "flags": {
+            "MF_SOLID": true,
+            "MF_SHOOTABLE": true,
+            "MF_AMBUSH": true,
+            "MF_COUNTKILL": true
+        },
+        "distance": 2645.146240234375
+    },
+    {
+        "id": 82,
+        "position": {
+            "x": 2272,
+            "y": -4000,
+            "z": -136
+        },
+        "angle": 270,
+        "height": 16,
+        "health": 1000,
+        "typeId": 24,
+        "type": "Pool of blood and flesh",
+        "flags": {},
+        "distance": 1861.146240234375
+    },
+    {
+        "id": 53,
+        "position": {
+            "x": 2304,
+            "y": -4032,
+            "z": -136
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2012,
+        "type": "Medikit",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 1909.146240234375
+    },
+    {
+        "id": 52,
+        "position": {
+            "x": 3072,
+            "y": -4768,
+            "z": -24
+        },
+        "angle": 90,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2011,
+        "type": "Stimpak",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_AMBUSH": true
+        },
+        "distance": 3029.146240234375
+    },
+    {
+        "id": 49,
+        "position": {
+            "x": 2944,
+            "y": -4704,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2901.146240234375
+    },
+    {
+        "id": 48,
+        "position": {
+            "x": 3072,
+            "y": -4704,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 2965.146240234375
+    },
+    {
+        "id": 47,
+        "position": {
+            "x": 2944,
+            "y": -4832,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 3029.146240234375
+    },
+    {
+        "id": 46,
+        "position": {
+            "x": 3072,
+            "y": -4832,
+            "z": -24
+        },
+        "angle": 180,
+        "height": 16,
+        "health": 1000,
+        "typeId": 2015,
+        "type": "Spirit Armor +1% armor",
+        "flags": {
+            "MF_SPECIAL": true,
+            "MF_COUNTITEM": true
+        },
+        "distance": 3093.146240234375
+    }
+]
