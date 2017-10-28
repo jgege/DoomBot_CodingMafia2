@@ -9,11 +9,16 @@ class ApiEndPoint(object):
 			payload = json.dumps(data)
 			return requests.get(self.host + uri, data=payload).content
 		return json.loads(requests.get(self.host + uri).content)
-
+	
 	def post(self, uri, data):
 		payload = json.dumps(data)
 		headers = {
 	        'content-type': "application/json",
 	        'cache-control': "no-cache"
 	    }
-		return json.loads(requests.post(self.host + uri, data=payload, headers=headers).content)
+		content = requests.post(self.host + uri, data=payload, headers=headers).content
+
+		if (len(content) > 0):
+			return json.loads(content)
+		
+		return None

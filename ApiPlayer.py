@@ -26,11 +26,11 @@ class ApiPlayer(ApiEndPoint):
 		data = {"type" : "turn-right", "amount" : amount}
 		return self.doAction(data)
 	
-	def turnLeftByAngle(self, angle):
+	def turnLeftSlow(self, angle):
 		data = {"type" : "left", "target_angle" : angle}
 		return super(ApiPlayer, self).post("/api/player/turn", data)
 
-	def turnRightByAngle(self, angle):
+	def turnRightSlow(self, angle):
 		data = {"type" : "right", "target_angle" : angle}
 		return super(ApiPlayer, self).post("/api/player/turn", data)
 

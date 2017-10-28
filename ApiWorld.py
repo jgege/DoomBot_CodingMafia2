@@ -22,3 +22,7 @@ class ApiWorld(ApiEndPoint):
     
     def getObjectById(self, objectId):
         return super(ApiWorld, self).get("/api/world/objects/" + objectId)
+    
+    def isLos(self, objectId1, objectId2):
+        return super(ApiWorld, self).get("/api/world/los/" + str(objectId1) + "/" + str(objectId2))
+        
