@@ -5,6 +5,5 @@ from ApiWorld import ApiWorld
 class ApiWrapper(object):
     def __init__(self, host):
         self.player = ApiPlayer(host)
-        self.players = ApiPlayers(host)
-        self.world = ApiWorld(host)
-    
+        #self.players = ApiPlayers(host)
+        #self.world = ApiWorld(host)
