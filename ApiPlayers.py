@@ -1,8 +1,11 @@
-import requests
+from ApiEndPoint import ApiEndPoint
 
-class ApiPlayers(object):
+class ApiPlayers(ApiEndPoint):
     def __init__(self, host):
         self.host = host
         
     def getInfo(self):
-        return requests.get(self.host+"/api/players").content
+        return super(ApiPlayers, self).get("/api/players")
+    
+    def getPlayerInfo(self, playerId):
+        return super(ApiPlayers, self).get("/api/players/"+playerId)

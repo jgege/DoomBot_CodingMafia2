@@ -4,7 +4,10 @@ class ApiEndPoint(object):
 	def __init__(self, host):
 		self.host = host
 
-	def get(self, uri):
+	def get(self, uri, data=""):
+		if (len(data) > 0):
+			payload = json.dumps(data)
+			return requests.get(self.host + uri, data=payload).content
 		return requests.get(self.host + uri).content
 
 	def post(self, uri, data):
