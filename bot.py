@@ -1,7 +1,6 @@
 from Player import Player
 from ApiWrapper import ApiWrapper
 import time
-import math
 
 api = ApiWrapper("http://localhost:6001")
 bot = Player(api)
@@ -9,6 +8,23 @@ bot = Player(api)
 
 #bot.setAngle(70)
 
+print bot.api.world.getObjects()
+
+while bot.selfBuff():
+    continue
+
+
+# SHOOTABLE
+
+
+"""
+while bot.destroyAllEnemies():
+    print "I'm looking for enemies."
+    if (bot.checkHealth() == False):
+        print "I have to defend myself."
+        bot.defend()
+    continue
+"""
 """
 bot.refreshSelfInfo()
 print bot.info['angle']
@@ -29,23 +45,7 @@ while True:
     print bot.info['angle']
 """
 
-bot.refreshSelfInfo()
-print bot.info
-barrel = bot.findTheClosestBarrel()
-print barrel
-print bot.calcDistanceFromObject(barrel['position']['x'], barrel['position']['y'])
-bot.turnTowards(barrel['position']['x'], barrel['position']['y'])
-time.sleep(2)
-bot.refreshSelfInfo()
-bot.info['angle']
-bot.moveForward(barrel['distance'])
-time.sleep(2)
-bot.refreshSelfInfo()
-bot.turnTowards(barrel['position']['x'], barrel['position']['y'])
-time.sleep(1)
-bot.moveBackward(50)
-time.sleep(1)
-bot.burstFire(3)
+
 """
 bot.refreshSelfInfo()
 print "botpy CA:" + str(bot.info['angle'])

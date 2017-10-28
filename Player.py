@@ -7,6 +7,10 @@ class Player(object):
         self.refreshSelfInfo()
         self.mvToCoordRatio = None
         self.rotateRatio = None
+        self.prevHealth = None
+        self.enemyObjectList = ("ARACHNOTRON", "ARCH-VILE", "BARON OF HELL", "CACODEMON", "CHAINGUNNER", "COMMANDER KEEN", "CYBERDEMON", "DEMON", "FORMER HUMAN TROOPER", "FORMER HUMAN SERGEANT", "HELL KNIGHT", "IMP", "LOST SOUL", "MANCUBUS", "PAIN ELEMENTAL", "REVENANT", "SPECTRE", "SPIDER MASTERMIND", "WOLFENSTEIN SS")
+        self.powerupsList = ("BACKPACK", "BLUE ARMOR", "GREEN ARMOR", "MEDIKIT", "RADIATION SUIT", "STIMPACK", "Health Potion +1% health", "Green armor 100%", "Spirit Armor +1% armor", "Blue armor 200%", "Health Potion +1% health")
+        self.weaponsList = ("BFG", "CHAINGUN", "CHAINSAW", "PLASMA RIFLE", "ROCKET LAUNCHER", "SHOTGUN", "SUPER SHOTGUN")
         
         self.calibrateMovement()
         self.calibrateTurning()
@@ -19,7 +23,9 @@ class Player(object):
         endInfo = self.api.player.getInfo()
         absDistance = self.calcAbsDistance(startInfo['position']['x'], startInfo['position']['y'], endInfo['position']['x'], endInfo['position']['y'])
         
-        self.mvToCoordRatio = 2 / float(absDistance)
+        self.mvToCoordRatio = 1
+        if (absDistance > 0):
+            self.mvToCoordRatio = 2 / float(absDistance)
         print "MoveRatio: " + str(self.mvToCoordRatio)
         return self.mvToCoordRatio
     
@@ -76,61 +82,6 @@ class Player(object):
             print "Turn left..."
             self.turnLeft((360-playerAngle+angle)%360)
         
-        return
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        print "setAngle: " + str(angle)
-        
-        if (angle == 0):
-            self.setAngleToZero()
-            return;
-        
-        #print "PA: " + str(self.info['angle'])
-        playerAngle = self.info['angle'] - 180 # -180;180
-        #print "PA-180: " + str(playerAngle)
-        #print "angle " + str(angle)
-        angle -= 180 # -180;180
-        #print "angle-180 " + str(angle)
-        angleDistance = (playerAngle) - (angle)
-        print "AD: " + str(angleDistance+180)
-        print "PA: " + str(playerAngle+180)
-        #print "AD: " + str(angleDistance)
-        # 50 - 10
-        # 10 - 50
-        
-        if (angleDistance > 0):
-            self.turnLeft(angleDistance+180)
-        else:
-            self.turnRight(angleDistance+180)
 
     def calcAbsDistance(self, x1, y1, x2, y2):
         return math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
@@ -156,17 +107,22 @@ class Player(object):
                 
         return closestDoor
     
-    def findTheClosestBarrel(self):
+    def findClosestObjectFromType(self, objType):
         objectList = self.api.world.getObjects()
-        closestBarrel = None
+        closestObj = None
+        print objType
         for obj in objectList:
-            if (obj['type'] == "Barrel"):
-                if (closestBarrel is None):
-                    closestBarrel = obj
-                elif(closestBarrel['distance'] > obj['distance']) :
-                    closestBarrel = obj
+            fitsType = (((type(objType) is list or type(objType) is tuple) and (obj['type'] in objType)) or obj['type'] == objType)
+            if (fitsType and self.canISee(obj['id'])): # and obj['health'] >= 0
+                if (closestObj is None):
+                    closestObj = obj
+                elif(closestObj['distance'] > obj['distance']) :
+                    closestObj = obj
                 
-        return closestBarrel
+        return closestObj
+
+    def findTheClosestBarrel(self):
+        return self.findClosestObjectFromType("Barrel")
     
     def canISee(self, objId):
         return self.api.world.isLos(self.info['id'], objId)
@@ -177,15 +133,12 @@ class Player(object):
     def turnTowards(self, x, y):
         self.refreshSelfInfo()
         # calculates the degree between two points (it doesn't care about what is their current rotation)
-        angle = math.degrees(math.atan2(y - self.info['position']['y'], x - self.info['position']['x']))
+        angle = self.returnObjectPlayerAngle(x, y)
         print "turnTowards angle: " + str(angle)
         self.setAngle(angle)
 
-    def turnToAbsAngleFast(self, angle):
-        if ((self.info['angle'] + 180) % 360 > angle):
-            self.turnLeft(angle)
-        else:
-            self.turnRight(angle)
+    def returnObjectPlayerAngle(self, x, y):
+        return math.degrees(math.atan2(y - self.info['position']['y'], x - self.info['position']['x']))
 
     def shoot(self):
         self.api.player.shoot()
@@ -197,8 +150,123 @@ class Player(object):
             
     def findObject(self, objectId):
         return self.api.world.getObjectById(objectId)
-"""
-    
+
+    def destroyAllEnemies(self):
+        self.refreshSelfInfo()        
+        enemy = self.findClosestObjectFromType(self.enemyObjectList)
+        if (enemy is None):
+            return False
+        print enemy            
+
+        self.moveCloseToObject(enemy, 0, 750)
         
+        if (self.canISee(enemy['id'])):
+            print "I can see it."
+            if (self.isObjectInRightAngle(enemy['id'])):
+                print "I can shoot it."
+                self.burstFire(10)
+            else:
+                print "I can't shoot it yet."
+        else:
+            print "I can't see it yet."
+        return True
+
+    def destroyClosestBarrel(self):
+        self.refreshSelfInfo()
+        barrel = self.findTheClosestBarrel()
+        if (barrel is None):
+            return False
+        print barrel            
+
+        self.moveCloseToObject(barrel, 100, 300)
+        
+        if (self.canISee(barrel['id'])):
+            print "I can see it!"
+            if (self.isObjectInRightAngle(barrel['id'])):
+                print "I can shoot it!"
+                self.burstFire(3)
+            else:
+                print "I can't shoot it yet!"
+        else:
+            print "I can't see it yet"
+        return True
     
-"""
+    def isObjectInRightAngle(self, objectId):
+        object = self.findObject(objectId)
+        
+        self.refreshSelfInfo()
+        angleDiff = self.info['angle'] - self.returnObjectPlayerAngle(object['position']['x'], object['position']['y'])
+        return (angleDiff <= 7.5 and angleDiff >= -7.5)
+        
+    def moveCloseToObject(self, obj, minDist, maxDist):
+        self.refreshSelfInfo()
+        if (self.isObjectInRightAngle(obj['id']) == False):
+            self.turnTowards(obj['position']['x'], obj['position']['y'])
+            time.sleep(1.5)
+            self.refreshSelfInfo()
+        
+        if (self.closeEnoughToObject(obj, maxDist) == False):
+            self.moveForward(obj['distance'] - maxDist)
+        if (self.tooCloseToObject(obj, minDist)):
+            self.moveBackward(minDist - obj['distance'])
+        
+        time.sleep(2)
+    
+    def closeEnoughToObject(self, obj, maxDist):
+        return obj['distance'] < maxDist
+    
+    def tooCloseToObject(self, obj, minDist):
+        return obj['distance'] < minDist
+        
+    def defend(self):
+        enemy = self.findClosestObjectFromType(self.enemyObjectList)
+        
+        if enemy is None:
+            return False
+        
+        self.turnTowards(enemy['position']['x'], enemy['position']['y'])
+        time.sleep(0.25)
+        self.burstFire(5)
+        
+        return True
+            
+    def checkHealth(self):
+        self.refreshSelfInfo()
+        if (self.prevHealth is not None):
+            if(self.prevHealth > self.info['health']):
+                return False
+            
+        self.prevHealth = self.info['health']
+        return True 
+    
+    def collectPowerups(self):
+        self.refreshSelfInfo()        
+        buff = self.findClosestObjectFromType(self.powerupsList)
+        if (buff is None):
+            return False
+        print buff            
+
+        self.moveCloseToObject(buff, 0, 20)
+        return True
+        
+    def collectWeapons(self):
+        self.refreshSelfInfo()        
+        buff = self.findClosestObjectFromType(self.weaponsList)
+        if (buff is None):
+            return False
+        print buff            
+
+        self.moveCloseToObject(buff, 0, 20)
+        return True      
+    
+    def selfBuff(self):
+        self.refreshSelfInfo()        
+        buff = self.findClosestObjectFromType(self.weaponsList+self.powerupsList)
+        if (buff is None):
+            return False
+        print buff
+
+        self.moveCloseToObject(buff, 0, 20)
+        return True      
+              
+        
