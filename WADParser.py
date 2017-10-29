@@ -23,7 +23,7 @@ class Wad(object):
                 filepos = struct.unpack("<I", lump[0:4])[0] - header_size
                 size = struct.unpack("<I", lump[4:8])[0]
                 name = lump[8:16].decode('UTF-8').rstrip('\0')
-                print(name)
+                #print(name)
                 if(re.match('E\dM\d|MAP\d\d', name)):
                     #Level nodes are named things like E1M1 or MAP01
                     if(current_level.is_valid()):

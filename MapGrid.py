@@ -1,14 +1,10 @@
 from WADParser import Wad
 from bresenham import bresenham
 from astar import AStar
-from ApiWrapper import ApiWrapper
-from ApiWorld import ApiWorld
 import math
 
 class MapGrid(AStar):
     def __init__(self):
-        api = ApiWrapper("http://localhost:6001")
-        self.apiWorld = ApiWorld(api)
         wad = Wad("doom1.wad")
         lvl = wad.levels[0]
         self.grid = None
@@ -34,8 +30,8 @@ class MapGrid(AStar):
         #print "HW:", width, height
 
         self.grid  = [[0 for x in range(width+1)] for y in range(height+1)]
-        print len(self.grid), len(self.grid[0])
-        print (self.max[0] - self.min[0], self.max[1] - self.min[1])
+        #print len(self.grid), len(self.grid[0])
+        #print (self.max[0] - self.min[0], self.max[1] - self.min[1])
 
         # fill up the self.grid
         #for yC in range(len(self.grid)):

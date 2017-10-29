@@ -7,5 +7,5 @@ mapGrid = MapGrid()
 start = mapGrid.transformPos(start)
 end = mapGrid.transformPos(end)
 foundPath = list(mapGrid.astar(start, end))
-for p in foundPath:
-    print mapGrid.transformPosBack(p)
+for i in range(0, len(foundPath), 2):
+    print mapGrid.transformPosBack(foundPath[i])
