@@ -25,12 +25,12 @@ class MapGrid(AStar):
 
         #print self.min, self.max
         self.sampleSize = 16
-        width = int((self.max[0] - self.min[0]) / self.sampleSize)
-        height = int((self.max[1] - self.min[1]) / self.sampleSize)
+        self.width = int((self.max[0] - self.min[0]) / self.sampleSize)
+        self.height = int((self.max[1] - self.min[1]) / self.sampleSize)
         #print "HW:", width, height
 
-        self.grid  = [[0 for x in range(width+1)] for y in range(height+1)]
-        print len(self.grid), len(self.grid[0])
+        self.grid  = [[0 for x in range(self.width+1)] for y in range(self.height+1)]
+        #print len(self.grid), len(self.grid[0])
         #print (self.max[0] - self.min[0], self.max[1] - self.min[1])
 
         # fill up the self.grid
@@ -52,7 +52,7 @@ class MapGrid(AStar):
                 except Exception, e:
                     print e.message
                     #print self.grid
-                    print x,y,width,height
+                    print x,y,self.width,self.height
                     exit()
 
         for yC in range(0, len(self.grid)):
@@ -64,21 +64,21 @@ class MapGrid(AStar):
     def transformPos(self, id):
         x = int((id[0] + abs(self.min[0]))/self.sampleSize)
         y = int((id[1] + abs(self.min[1]))/self.sampleSize)
-        return y, x
+        return (x, y)
 
     def transformPosBack(self, id):
         x = id[0]*self.sampleSize + self.min[0]
         y = id[1]*self.sampleSize + self.min[1]
-        return y, x
+        return (x, y)
 
     def in_bounds(self, id):
         (x, y) = id
         #print id, (len(self.grid), len(self.grid[0]))
-        return 0 <= x < len(self.grid) and 0 <= y < len(self.grid[0])
+        return 0 <= x < len(self.grid[0]) and 0 <= y < len(self.grid)
 
     def passable(self, id):
         (x, y) = id
-        return self.grid[x][y] != 1
+        return self.grid[y][x] != 2
 
     def neighbors(self, id):
         (x, y) = id

@@ -75,6 +75,7 @@ class Level(object):
 
     def save_svg(self):
         """ Scale the drawing to fit inside a 1024x1024 canvas (iPhones don't like really large SVGs even if they have the same detail) """
+        """
         import svgwrite
         view_box_size = self.normalize(self.upper_right, 10)
         if view_box_size[0] > view_box_size[1]:
@@ -92,6 +93,7 @@ class Level(object):
                 dwg.add(dwg.line(a, b, stroke='#999', stroke_width=3))
 
         dwg.save()
+        """
 
 class Line(object):
     """Represents a Linedef inside a WAD"""

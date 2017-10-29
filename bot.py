@@ -4,16 +4,22 @@ import time
 
 api = ApiWrapper("http://localhost:6001")
 bot = Player(api)
+
+while True:
+    bot.refreshSelfInfo()
+    print bot.info['position']['x'], bot.info['position']['y']
+    time.sleep(1)
+
 #bot.doRotateRationTest()
 
 #bot.setAngle(70)
-
+"""
 print bot.api.world.getObjects()
 
 while bot.selfBuff():
     continue
 
-
+"""
 # SHOOTABLE
 
 

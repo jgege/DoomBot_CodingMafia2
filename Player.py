@@ -88,7 +88,7 @@ class Player(object):
 
     def moveTo(self, x, y):
         self.turnTowards(x, y)
-        time.sleep(0.5)
+        time.sleep(1.25)
         dist = self.calcDistanceFromObject(x, y)
         self.moveForward(dist)
 
@@ -116,7 +116,7 @@ class Player(object):
     def findClosestObjectFromType(self, objType):
         objectList = self.api.world.getObjects()
         closestObj = None
-        print objType
+        #print objType
         for obj in objectList:
             fitsType = (((type(objType) is list or type(objType) is tuple) and (obj['type'] in objType)) or obj['type'] == objType)
             if (fitsType and self.canISee(obj['id'])): # and obj['health'] >= 0
@@ -126,6 +126,20 @@ class Player(object):
                     closestObj = obj
 
         return closestObj
+
+    def findBuffs(self):
+        objectList = self.api.world.getObjects()
+        returnList = []
+        objType = self.weaponsList+self.powerupsList
+
+        for obj in objectList:
+            fitsType = (((type(objType) is list or type(objType) is tuple) and (obj['type'] in objType)) or obj['type'] == objType)
+            if (fitsType):
+                returnList.append(obj)
+        
+        returnList.sort(key=lambda x: x['distance'])        
+        
+        return returnList
 
     def findTheClosestBarrel(self):
         return self.findClosestObjectFromType("Barrel")
@@ -164,7 +178,7 @@ class Player(object):
         enemy = self.findClosestObjectFromType(self.enemyObjectList)
         if (enemy is None):
             return False
-        print enemy
+        #print enemy
 
         self.moveCloseToObject(enemy, 0, 750)
 
@@ -276,6 +290,46 @@ class Player(object):
 
         self.moveCloseToObject(buff, 0, 20)
         return True
+    
+    def findClosestBuff(self):
+        self.refreshSelfInfo()
+        buff = self.findClosestObjectFromType(self.weaponsList+self.powerupsList)
+        if (buff is None):
+            return False
+        return buff
+    
+    def collectClosestBuff(self, mapGrid):
+        buff = self.findClosestBuff()
+        if (buff is None):
+            return False
+        
+        start = (self.x, self.y)
+        destX = int(buff['position']['x'])
+        destY = int(buff['position']['y'])
+        end = (int(destX), int(destY))
+        start = mapGrid.transformPos(start)
+        end = mapGrid.transformPos(end)
+        foundPath = list(mapGrid.astar(start, end))
+        
+        for i in range(0, len(foundPath), 4):
+            position = mapGrid.transformPosBack(foundPath[i])
+            self.moveTo(position[0], position[1])
+            time.sleep(0.07)
+        
+        return True
 
     def use (self):
         self.api.player.use()
+        
+    def avg(self, a,b):
+        return (a+b)/2
+
+"""
+    def getDoorsOrderByDistance(self):
+        orderedDoorList
+        doorList = self.api.world.getDoors()
+   """     
+        
+        
+        
+        
