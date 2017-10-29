@@ -69,6 +69,7 @@ class Player(object):
     def setAngle(self, angle):
         self.refreshSelfInfo()
         time.sleep(1)
+        #angle = abs(angle
 
         playerAngle = self.info['angle']%360
         print "PA: " + str(playerAngle) + " oPA: " + str(self.info['angle'])
@@ -77,10 +78,10 @@ class Player(object):
 
         if ((playerAngle+180) < angle or playerAngle > angle):
             print "Turn right..."
-            self.turnRight(abs(angle-360-playerAngle)%360)
+            self.turnRight(abs(abs(angle)-360-playerAngle)%360)
         else:
             print "Turn left..."
-            self.turnLeft((360-playerAngle+angle)%360)
+            self.turnLeft((360-playerAngle+abs(angle))%360)
 
 
     def calcAbsDistance(self, x1, y1, x2, y2):
