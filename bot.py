@@ -35,8 +35,8 @@ for i in range(0, 360, 45):
     time.sleep(4)
     bot.refreshSelfInfo()
     print bot.info['angle']
-   """ 
-"""    
+   """
+"""
 while True:
     bot.setAngle()
     #bot.setAngleToZero()
@@ -49,7 +49,7 @@ while True:
 """
 bot.refreshSelfInfo()
 print "botpy CA:" + str(bot.info['angle'])
-print "Set angle to: 90" 
+print "Set angle to: 90"
 bot.setAngle(90)
 time.sleep(5)
 bot.refreshSelfInfo()
@@ -104,7 +104,7 @@ if (barrel is not None and bot.canISee(barrel['id'])):
         bot.moveForwardByCoords(bot.calcDistanceFromObject(barrel['position']['x'], barrel['position']['y'])-150)
         time.sleep(3)
         bot.turnTowards(barrel['position']['x'], barrel['position']['y'])
-    
+
 else:
     if (barrel is None):
         print "No barrel found"
@@ -115,22 +115,22 @@ def moveTest(bot):
     bot.doMoveTest()
 
     time.sleep(1)
-    
+
     bot.refreshSelfInfo()
     x1 = bot.info['position']['x']
     y1 = bot.info['position']['y']
     print str(x1) + ';' + str(y1)
-    
+
     bot.moveForwardByCoords(100)
-    
+
     time.sleep(1)
-    
+
     bot.refreshSelfInfo()
     x2 = bot.info['position']['x']
     y2 = bot.info['position']['y']
     print str(x2) + ';' + str(y2)
-    
-    
+
+
     print bot.calcAbsDistance(x1, y1, x2, y2)
 
 def turnTest2(bot):

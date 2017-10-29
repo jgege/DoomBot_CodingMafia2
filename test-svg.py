@@ -1,27 +1,11 @@
-from svgpathtools import svg2paths, svg2paths2, wsvg
-from bresenham import bresenham
-import numpy as np
+from MapGrid import MapGrid
 
-paths, attributes, svg_attributes = svg2paths2('../rooms/E1M1.svg')
-
-size = svg_attributes['viewBox'].split(" ")
-width = int(size[2]) + 1
-height = int(size[3]) + 1
-
-mapMatrix = [[0] * height for i in range(width)]
-
-for path in attributes:
-    isWall = path['stroke-width'] == '10'
-    points = bresenham(int(path['x1']), int(path['y1']), int(path['x2']), int(path['y2']))
-    for pt in points:
-        if isWall:
-            mapMatrix[pt[0]][pt[1]] = 2
-        else:
-            mapMatrix[pt[0]][pt[1]] = 1
-
-s = ""
-for i in range(len(mapMatrix)):
-    for j in range(len(mapMatrix[i])):
-        s += str(mapMatrix[i][j])
-    print s
-    s = ""
+start = (1051, -3650)
+#end = (1000, -3650)
+end = (1536, -2496)
+mapGrid = MapGrid()
+start = mapGrid.transformPos(start)
+end = mapGrid.transformPos(end)
+foundPath = list(mapGrid.astar(start, end))
+for p in foundPath:
+    print mapGrid.transformPosBack(p)
