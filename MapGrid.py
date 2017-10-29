@@ -1,7 +1,7 @@
 from WADParser import Wad
 from bresenham import bresenham
 from astar import AStar
-import math
+import math, copy
 
 class MapGrid(AStar):
     def __init__(self):
@@ -23,7 +23,7 @@ class MapGrid(AStar):
                 if self.max[1] < pt[1]:
                     self.max = (self.max[0], pt[1])
 
-        #print self.min, self.max
+        print self.min, self.max
         self.sampleSize = 16
         self.width = int((self.max[0] - self.min[0]) / self.sampleSize)
         self.height = int((self.max[1] - self.min[1]) / self.sampleSize)
@@ -42,8 +42,8 @@ class MapGrid(AStar):
             isWall = i.is_one_sided()
             points = bresenham(lvl.vertices[i.a][0], lvl.vertices[i.a][1], lvl.vertices[i.b][0], lvl.vertices[i.b][1])
             for pt in points:
-                x = int((pt[0] + abs(self.min[0]))/self.sampleSize)
-                y = int((pt[1] + abs(self.min[1]))/self.sampleSize)
+                x = int((pt[0] - self.min[0])/self.sampleSize)
+                y = int((pt[1] - self.min[1])/self.sampleSize)
                 try:
                     if isWall:
                         self.grid[y][x] = 2
@@ -61,9 +61,11 @@ class MapGrid(AStar):
                 s += str(self.grid[yC][xC])
             #print s
 
+        self.newGrid = copy.deepcopy(self.grid)
+
     def transformPos(self, id):
-        x = int((id[0] + abs(self.min[0]))/self.sampleSize)
-        y = int((id[1] + abs(self.min[1]))/self.sampleSize)
+        x = int((id[0] - self.min[0])/self.sampleSize)
+        y = int((id[1] - self.min[1])/self.sampleSize)
         return (x, y)
 
     def transformPosBack(self, id):
@@ -90,8 +92,8 @@ class MapGrid(AStar):
 
     def heuristic_cost_estimate(self, n1, n2):
         """computes the 'direct' distance between two (x,y) tuples"""
-        (x1, y1) = self.transformPos(n1)
-        (x2, y2) = self.transformPos(n2)
+        (x1, y1) = n1
+        (x2, y2) = n2
         #print len(self.grid), len(self.grid[0]), (x1, y1), (x2, y2)
         return math.hypot(x2 - x1, y2 - y1)
 
@@ -103,3 +105,18 @@ class MapGrid(AStar):
     def is_goal_reached(self, current, goal):
         #print "goal", current, goal
         return current[0] == goal[0] and current[1] == goal[1]
+
+
+    def printWithPath(self, path):
+        for p in path:
+            self.newGrid[p[1]][p[0]] = 4
+        for yC in range(0, len(self.newGrid)):
+            s = ""
+            for xC in range(0, len(self.newGrid[yC])):
+                if self.newGrid[yC][xC] == 4:
+                    s += 'R'
+                elif self.newGrid[yC][xC] == 6:
+                    s += 'X'
+                else:
+                    s += str(self.newGrid[yC][xC])
+            print s
