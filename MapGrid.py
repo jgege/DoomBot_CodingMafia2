@@ -30,7 +30,7 @@ class MapGrid(AStar):
         #print "HW:", width, height
 
         self.grid  = [[0 for x in range(width+1)] for y in range(height+1)]
-        #print len(self.grid), len(self.grid[0])
+        print len(self.grid), len(self.grid[0])
         #print (self.max[0] - self.min[0], self.max[1] - self.min[1])
 
         # fill up the self.grid
@@ -64,12 +64,12 @@ class MapGrid(AStar):
     def transformPos(self, id):
         x = int((id[0] + abs(self.min[0]))/self.sampleSize)
         y = int((id[1] + abs(self.min[1]))/self.sampleSize)
-        return x, y
+        return y, x
 
     def transformPosBack(self, id):
         x = id[0]*self.sampleSize + self.min[0]
         y = id[1]*self.sampleSize + self.min[1]
-        return x, y
+        return y, x
 
     def in_bounds(self, id):
         (x, y) = id
