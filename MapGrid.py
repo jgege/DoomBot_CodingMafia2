@@ -1,10 +1,14 @@
 from WADParser import Wad
 from bresenham import bresenham
 from astar import AStar
+from Player import Player
+from ApiWrapper import ApiWrapper
 import math, copy
 
 class MapGrid(AStar):
     def __init__(self):
+        api = ApiWrapper("http://localhost:6001")
+        player = Player(api)
         wad = Wad("doom1.wad")
         lvl = wad.levels[0]
         self.grid = None
@@ -23,7 +27,7 @@ class MapGrid(AStar):
                 if self.max[1] < pt[1]:
                     self.max = (self.max[0], pt[1])
 
-        print self.min, self.max
+        #print self.min, self.max
         self.sampleSize = 16
         self.width = int((self.max[0] - self.min[0]) / self.sampleSize)
         self.height = int((self.max[1] - self.min[1]) / self.sampleSize)
@@ -55,13 +59,18 @@ class MapGrid(AStar):
                     print x,y,self.width,self.height
                     exit()
 
+        # world
+        solids =  player.findSolidObjects()
+        for solidObj in solids:
+            pos = self.transformPos((int(solidObj['position']['x']), int(solidObj['position']['y'])))
+            self.grid[pos[1]][pos[0]] = 2
+            self.grid[pos[1]][pos[0]+1] = 2
+
         for yC in range(0, len(self.grid)):
             s = ""
             for xC in range(0, len(self.grid[0])):
                 s += str(self.grid[yC][xC])
             #print s
-
-        self.newGrid = copy.deepcopy(self.grid)
 
     def transformPos(self, id):
         x = int((id[0] - self.min[0])/self.sampleSize)
@@ -92,8 +101,8 @@ class MapGrid(AStar):
 
     def heuristic_cost_estimate(self, n1, n2):
         """computes the 'direct' distance between two (x,y) tuples"""
-        (x1, y1) = n1
-        (x2, y2) = n2
+        (x1, y1) = self.transformPos(n1)
+        (x2, y2) = self.transformPos(n2)
         #print len(self.grid), len(self.grid[0]), (x1, y1), (x2, y2)
         return math.hypot(x2 - x1, y2 - y1)
 
@@ -106,17 +115,17 @@ class MapGrid(AStar):
         #print "goal", current, goal
         return current[0] == goal[0] and current[1] == goal[1]
 
-
     def printWithPath(self, path):
+        newGrid = copy.deepcopy(self.grid)
         for p in path:
-            self.newGrid[p[1]][p[0]] = 4
-        for yC in range(0, len(self.newGrid)):
+            newGrid[p[1]][p[0]] = 4
+        for yC in range(0, len(newGrid)):
             s = ""
-            for xC in range(0, len(self.newGrid[yC])):
-                if self.newGrid[yC][xC] == 4:
+            for xC in range(0, len(newGrid[yC])):
+                if newGrid[yC][xC] == 4:
                     s += 'R'
-                elif self.newGrid[yC][xC] == 6:
+                elif newGrid[yC][xC] == 6:
                     s += 'X'
                 else:
-                    s += str(self.newGrid[yC][xC])
+                    s += str(newGrid[yC][xC])
             print s
